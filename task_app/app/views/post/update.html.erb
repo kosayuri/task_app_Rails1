@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="information">
+        <h2>スケジュール編集</h2>
+        <ul>
+            <% @post.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+            <% end %>
+        </ul>
+    </div>
+        
+    <%= form_tag("/postupdate/#{@post.id}") do %>
+        <table>
+            <tbody>
+                <tr>
+                    <th><label for="post_title">タイトル</label></th>
+                    <td><input id="post_title" type="text" name="title" value="<%="#{@post.title}"%>"></td>
+                </tr>
+                <tr>
+                    <th><label for="post_start_at">開始日</label></th>
+                    <td><input id="post_start_at" type="date" name="startday" value="<%="#{@post.startday}"%>"></td>
+                </tr>
+                <tr>
+                    <th><label for="post_end_at">終了日</label></th>
+                    <td><input id="post_end_at" type="date" name="endday" value="<%="#{@post.endday}"%>"></td>
+                </tr>
+                <tr>
+                    <th><label for="post_is_all_day">終日</label></th>
+                    <%if @post.allday%>
+                    <td><input name="allday" type="hidden" value=<%=false%>><label><input id="post_is_all_day" type="checkbox" value=<%=true%> name="allday" checked></label>終日の場合はチェックを入れます</td>
+                    <%else%>
+                        <td><input name="allday" type="hidden" value=<%=false%>><input id="post_is_all_day" type="checkbox" value=<%=true%> name="allday">終日の場合はチェックを入れます</td>
+                    <%end%>
+                </tr>
+                <tr>
+                    <th><label for="post_memo">スケジュールメモ</label></th>
+                    <td><textarea id="post_memo" class="posts-content" name="memo"><%=@post.memo%></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <ul>
+                <li><input type="submit" value="スケジュールを編集する"></li>
+                <li><%= link_to("スケジュール一覧に戻る", "/post") %></li>
+            </ul>
+        </div>
+    <% end %>
+</div>
