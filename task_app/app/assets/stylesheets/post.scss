@@ -1,0 +1,23 @@
+// Place all the styles related to the post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.main{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.posts-content {
+    width: 350px;
+    height: 200px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    width: auto;
+}
+
+input, pre {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}

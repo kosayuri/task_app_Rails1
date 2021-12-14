@@ -28,6 +28,17 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
+ ja:
+      activerecord:
+        models:
+          post: スケジュール
+        attributes:
+          post:
+            title: タイトル
+            startday: 開始日
+            endday: 終了日
+            allday: 終日
+            memo: スケジュールメモ
 
 en:
   hello: "Hello world"
